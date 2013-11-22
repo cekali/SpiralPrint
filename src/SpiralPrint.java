@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class SpiralPrint
 {
 	private Integer[][] array;
+	private static String RANGE = "between 0 and 2147483647: ";
 	
 	public SpiralPrint(int max)
 	{
@@ -15,7 +16,7 @@ public class SpiralPrint
 	public static void main(String... args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter any integer: ");
+		System.out.print("Enter an integer " + RANGE);
 		
 		Integer inputValue = null;
 		while(inputValue == null)
@@ -23,7 +24,7 @@ public class SpiralPrint
 			if(!scanner.hasNextInt())
 			{
 				scanner.nextLine();
-				System.out.print("Please enter an integer: ");
+				System.out.print("Please enter an integer " + RANGE);
 				continue;
 			}
 			
@@ -31,7 +32,7 @@ public class SpiralPrint
 			if(temp < 0)
 			{
 				scanner.nextLine();
-				System.out.print("Please enter a POSITIVE integer: ");
+				System.out.print("Please enter a POSITIVE integer " + RANGE);
 				continue;
 			}
 			
