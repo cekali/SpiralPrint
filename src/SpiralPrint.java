@@ -97,30 +97,31 @@ public class SpiralPrint
 			{
 				array[row++][col] = currentValue++;
 			}
-			row--;
-			col--;
+			row--;// iterated one too far
+			col--;// start in previous column
 			i++;
 			// left
 			while (hasNextCorner(corners, i, currentValue))
 			{
 				array[row][col--] = currentValue++;
 			}
-			col++;
-			row--;
+			col++;// iterated one too far
+			row--;// start in previous row
 			i++;
 			// up
 			while (hasNextCorner(corners, i, currentValue))
 			{
 				array[row--][col] = currentValue++;
 			}
-			row++;
-			col++;
+			row++;// iterated one too far
+			col++;// start in next column
 			i++;
 			// right
 			while (hasNextCorner(corners, i, currentValue))
 			{
 				array[row][col++] = currentValue++;
 			}
+			// no need to update row and col, square is complete
 			i++;
 		}
 		
@@ -199,10 +200,5 @@ public class SpiralPrint
 	public Integer[][] getArray()
 	{
 		return array;
-	}
-
-	public void setArray(Integer[][] array)
-	{
-		this.array = array;
 	}
 }
